@@ -29,11 +29,12 @@ logger = logging.getLogger(__name__)
 
 HF_TOKEN = os.getenv("HF_TOKEN")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+USER_NAME = os.getenv("USER_NAME")
 
 DEFAULT_MODEL = "gemini-1.5-flash"
 REQUESTED_MODEL = "gemini-3-flash-preview" # Using latest confirmed flash
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-CONFIG_REPO_ID = "Prayas99/user-preferences"
+CONFIG_REPO_ID = f"{USER_NAME}/user-preferences"
 
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
